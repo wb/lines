@@ -1,24 +1,22 @@
-Usage
-=====
+#Usage
 
 This bash script will count the number of lines of text present in a directory and return that number to you. There is an optional parameter of a directory:
 
-$ lines
-Found 562 lines of text in .
-$ lines test-project
-Found 2287 lines of text in test-project/
+    $ lines
+    Found 562 lines of text in .
+    $ lines test-project
+    Found 2287 lines of text in test-project/
 
-Installation
-============
+#Installation
 
 In order to allow the file itself to remain in the repository, but have the functionality of the command system-wide, I opted to symbolically link the file to /usr/bin. There are other options here, but I'll describe this approach.
 
 First, ensure the file is executable:
 
-$ chmod +x lines.sh
+    $ chmod +x lines.sh
 
 Next, create a symbolic link between this file and /usr/bin/lines (or whatever name you chose). I use the full path below due to issues encountered when using relative paths:
 
-$ sudo ln -s <full path to directory containing lines.sh>/lines.sh /usr/bin/lines
+    $ sudo ln -s <full path to directory containing lines.sh>/lines.sh /usr/bin/lines
 	
 And that's it! Typing "lines [directory]" in your shell should now return the number of lines of text found! Useful for making yourself feel better about being up until 5am.
